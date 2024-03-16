@@ -12,4 +12,6 @@
 <script setup>
 const { say } = useUtils();
 say();
+const { $hello } = useNuxtApp();
+$hello('plugins');
 </script>
