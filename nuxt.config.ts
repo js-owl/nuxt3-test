@@ -5,5 +5,6 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/main.scss'],
   postcss: { plugins: { tailwindcss: {}, autoprefixer: {} } },
-  modules: ['@nuxt/content', '@pinia/nuxt']
+  modules: ['@nuxt/content', '@pinia/nuxt'],
+  ssr: false
 });
