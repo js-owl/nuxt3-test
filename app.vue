@@ -1,10 +1,13 @@
 <template>
-  <div class="bg-state-900 h-screen">
+  <div>
     <NuxtLayout>
       <header>
-        <ul>
-          <li><NuxtLink to="/">Home</NuxtLink></li>
-          <li><NuxtLink to="/events">Events</NuxtLink></li>
+        <ul style="display: flex; border: 1px solid blue">
+          <li style="margin-right: 10px"><NuxtLink to="/">Home</NuxtLink></li>
+          <li style="margin-right: 10px">
+            <NuxtLink to="/events">Events</NuxtLink>
+          </li>
+          <li><NuxtLink to="/custom">Custom</NuxtLink></li>
         </ul>
       </header>
       <Header />
