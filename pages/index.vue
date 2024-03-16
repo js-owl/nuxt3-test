@@ -13,6 +13,8 @@
   </div>
 </template>
 <script setup>
+import { useCounterStore } from '~/stores/myStore';
+const store = useCounterStore();
 const counter = useState('counter', () => Math.round(Math.random() * 1000));
 const { say } = useUtils();
 say();
