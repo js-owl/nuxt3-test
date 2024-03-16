@@ -4,5 +4,6 @@ export default defineNuxtConfig({
   alias: { assets: '/<rootDir>/assets' },
   devtools: { enabled: true },
   css: ['~/assets/main.scss'],
-  postcss: { plugins: { tailwindcss: {}, autoprefixer: {} } }
+  postcss: { plugins: { tailwindcss: {}, autoprefixer: {} } },
+  modules: ['@nuxt/content']
 });

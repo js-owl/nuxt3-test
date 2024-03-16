@@ -7,6 +7,7 @@
     <!-- <img src="/2.png" alt="aaa" /> -->
     <Alert />
     <ProfileHeaderAvatar />
+    <ContentDoc />
   </div>
 </template>
 <script setup>
