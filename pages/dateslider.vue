@@ -2,15 +2,9 @@
   <div class="dateslider">
     <Swiper
       class="swiper-cards"
-      :width="240"
-      :modules="[SwiperAutoplay, SwiperEffectCards]"
+      :modules="[]"
       :slides-per-view="1"
       :loop="true"
-      :effect="'cards'"
-      :autoplay="{
-        delay: 8000,
-        disableOnInteraction: true
-      }"
     >
       <SwiperSlide
         v-for="(slide, idx) in slides"
@@ -24,11 +18,12 @@
       </SwiperSlide>
     </Swiper>
     <hr />
-    <div>
-      Экскурсии:
-      <span>
-        {{ curSlide.events ? curSlide.events[0].name : 'Выберите день' }}
-      </span>
+    <div style="margin: 20px">
+      Афиша событий
+      {{ curSlide.events ? `на ${curSlide.date} ${curSlide.month}` : '' }}
+    </div>
+    <div style="margin: 20px">
+      {{ curSlide.events ? curSlide.events[0].name : 'Выберите день' }}
     </div>
   </div>
 </template>
@@ -39,21 +34,27 @@ definePageMeta({
 const slides = ref([
   {
     id: 1,
+    month: 'марта',
     date: 17,
     weekday: 'вс',
-    events: [{ name: 'text11' }, { name: 'text12' }]
+    events: [{ name: 'Экскурсия «Родная страна»' }, { name: 'text12' }]
   },
   {
     id: 2,
+    month: 'марта',
     date: 18,
     weekday: 'пн',
-    events: [{ name: 'text21' }, { name: 'text22' }]
+    events: [{ name: 'Экскурсия «Цифровое погружение»' }, { name: 'text22' }]
   },
   {
     id: 3,
+    month: 'марта',
     date: 19,
     weekday: 'вт',
-    events: [{ name: 'text31' }, { name: 'text32' }]
+    events: [
+      { name: 'Флагманский маршрут достижений «Россия — это мы»' },
+      { name: 'text32' }
+    ]
   }
 ]);
 let curSlide = ref({});
@@ -95,6 +96,9 @@ const onSwiper = (swiper) => {
   text-align: center;
   transition: background-color 0.3s ease-in-out;
   cursor: pointer;
+}
+.swiper-slide-active .dateslider__iinner {
+  /* background-color: red; */
 }
 .dateslider__ititle {
   text-transform: uppercase;
