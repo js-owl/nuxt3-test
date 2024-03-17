@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <h2>Swiper Card Effect</h2>
+  <div class="dateslider">
     <Swiper
       class="swiper-cards"
       :width="240"
@@ -34,6 +33,9 @@
   </div>
 </template>
 <script setup>
+definePageMeta({
+  layout: 'custom'
+});
 const slides = ref([
   {
     id: 1,
@@ -61,6 +63,9 @@ const onSwiper = (swiper) => {
 </script>
 
 <style>
+.dateslider {
+  margin-top: 10px;
+}
 .swiper-slide {
   display: flex;
   justify-content: center;
