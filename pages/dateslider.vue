@@ -2,9 +2,10 @@
   <div class="dateslider">
     <Swiper
       class="swiper-cards"
+      :width="70"
       :modules="[]"
       :slides-per-view="1"
-      :loop="true"
+      :spaceBetween="10"
     >
       <SwiperSlide
         v-for="(slide, idx) in slides"
@@ -72,7 +73,7 @@ const onSwiper = (swiper) => {
   justify-content: center;
   align-items: center;
   font-size: 18px;
-  height: 20vh;
+  height: 70px;
   font-size: 4rem;
   font-weight: bold;
   font-family: 'Roboto', sans-serif;
@@ -83,7 +84,7 @@ const onSwiper = (swiper) => {
 }
 .swiper-cards {
   width: 240px;
-  height: 240px;
+  height: 100px;
 }
 .swiper-cards .swiper-slide {
   border-radius: 6px;
