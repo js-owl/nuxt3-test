@@ -1,7 +1,8 @@
 <template>
   <div class="Main container py-3 mx-auto">
-    <p>{{ pending ? 'Loading...' : productCount }}</p>
-    <button @click="refresh">Refresh</button>
+    <div>Home</div>
+    <!-- <p>{{ pending ? 'Loading...' : productCount }}</p>
+    <button @click="refresh">Refresh</button> -->
     <!-- <p>{{ pending ? 'Loading...' : products }}</p> -->
     <!-- <Counter />
     <Counter />
@@ -16,10 +17,10 @@
   </div>
 </template>
 <script setup>
-const { data: productCount, pending } = await useAsyncData('count', () =>
-  $fetch('/api/count')
-);
-const refresh = () => refreshNuxtData('count');
+// const { data: productCount, pending } = await useAsyncData('vdnh', () =>
+//   $fetch('/api/vdnh')
+// );
+// const refresh = () => refreshNuxtData('vdnh');
 // const { data: products, pending } = await useFetch('/api/products', {
 //   transform: (_products) => _products.data
 // });

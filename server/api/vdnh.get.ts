@@ -1,4 +1,4 @@
-import data from './products.json';
+import data from './vdnh.json';
 
 export default defineEventHandler(async () => {
   return new Promise<any>((resolve, reject) => {

@@ -32,34 +32,16 @@
 definePageMeta({
   layout: 'custom'
 });
-const slides = ref([
-  {
-    id: 1,
-    month: 'марта',
-    date: 17,
-    weekday: 'вс',
-    events: [{ name: 'Экскурсия «Родная страна»' }, { name: 'text12' }]
-  },
-  {
-    id: 2,
-    month: 'марта',
-    date: 18,
-    weekday: 'пн',
-    events: [{ name: 'Экскурсия «Цифровое погружение»' }, { name: 'text22' }]
-  },
-  {
-    id: 3,
-    month: 'марта',
-    date: 19,
-    weekday: 'вт',
-    events: [
-      { name: 'Флагманский маршрут достижений «Россия — это мы»' },
-      { name: 'text32' }
-    ]
-  }
-]);
+const { data: slides, pending } = await useAsyncData('vdnh', () =>
+  $fetch('/api/vdnh')
+);
+const refresh = () => refreshNuxtData('vdnh');
 let curSlide = ref({});
-const onSwiper = (swiper) => {
+const onSwiper = async (swiper) => {
+  const id = String(swiper.id);
+  const { data: events, pending } = await useAsyncData(id, () =>
+    $fetch(`/api/${id}`)
+  );
   curSlide.value = swiper;
 };
 </script>
